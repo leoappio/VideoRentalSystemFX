@@ -55,7 +55,7 @@ public class MovementsBalanceController {
 
         totalClients.setText("Total de clientes: "+_totalClients);
         totalMovies.setText("Total de filmes: "+_totalMovies);
-        totalLocations.setText("Total de locações no mês: "+_totalMovies);
+        totalLocations.setText("Total de locações no mês: "+_totalLocations);
         movies24.setText("Filmes 24H: "+_total24hMovies);
         movies48.setText("Filmes 48H: "+_total48hMovies);
         averageLocations.setText("Média de locações p/ usuário: "+strAvgLocations);

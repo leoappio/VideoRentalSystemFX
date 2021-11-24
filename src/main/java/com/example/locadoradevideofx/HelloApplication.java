@@ -27,6 +27,7 @@ public class HelloApplication extends Application {
     private static Scene collectionBalance;
     private static Scene movementsBalance;
     private static Scene location;
+    private static Scene devolution;
 
 
     @Override
@@ -130,6 +131,11 @@ public class HelloApplication extends Application {
                 FXMLLoader fxmlLocation = new FXMLLoader(HelloApplication.class.getResource("location.fxml"));
                 location = new Scene(fxmlLocation.load(), 500, 300);
                 globalStage.setScene(location);
+                break;
+            case "devolution":
+                FXMLLoader fxmlDevolution = new FXMLLoader(HelloApplication.class.getResource("devolution.fxml"));
+                devolution = new Scene(fxmlDevolution.load(), 500, 300);
+                globalStage.setScene(devolution);
                 break;
         }
     }

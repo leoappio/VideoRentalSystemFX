@@ -12,5 +12,8 @@ public class LocationController {
     public void locationButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("location");
     }
+    public void devolutionButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("devolution");
+    }
 }
 
