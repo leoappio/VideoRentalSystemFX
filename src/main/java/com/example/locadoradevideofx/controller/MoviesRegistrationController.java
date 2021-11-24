@@ -6,7 +6,12 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class MoviesRegistrationController {
+
     public void returnButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("main");
+    }
+
+    public void onCreateClickButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("movieNew");
     }
 }

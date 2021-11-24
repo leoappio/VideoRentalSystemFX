@@ -20,6 +20,7 @@ public class HelloApplication extends Application {
     private static Scene allClients;
     private static Scene deleteClient;
     private static Scene editClient;
+    private static Scene movieNew;
 
 
     @Override
@@ -45,6 +46,9 @@ public class HelloApplication extends Application {
 
         FXMLLoader fxmlAllClients = new FXMLLoader(HelloApplication.class.getResource("all-clients.fxml"));
         allClients = new Scene(fxmlAllClients.load(), 500, 300);
+
+        FXMLLoader fxmlMovieNew = new FXMLLoader(HelloApplication.class.getResource("movie-new.fxml"));
+        movieNew = new Scene(fxmlMovieNew.load(), 500, 300);
 
 
 
@@ -87,6 +91,9 @@ public class HelloApplication extends Application {
                 FXMLLoader fxmlEditClient = new FXMLLoader(HelloApplication.class.getResource("client-edit.fxml"));
                 editClient = new Scene(fxmlEditClient.load(), 500, 300);
                 globalStage.setScene(editClient);
+                break;
+            case "movieNew":
+                globalStage.setScene(movieNew);
                 break;
         }
     }

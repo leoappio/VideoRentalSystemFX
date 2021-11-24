@@ -19,7 +19,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="522.0">
                <children>
-                  <Button layoutX="27.0" layoutY="35.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Inclusão" />
+                  <Button layoutX="27.0" layoutY="35.0" mnemonicParsing="false" onAction="#onCreateClickButton" prefHeight="34.0" prefWidth="201.0" text="Inclusão" />
                   <Button layoutX="261.0" layoutY="35.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Alteração" />
                   <Button layoutX="27.0" layoutY="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Consulta" />
                   <Button layoutX="261.0" layoutY="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Exclusão" />
