@@ -22,6 +22,7 @@ public class HelloApplication extends Application {
     private static Scene editClient;
     private static Scene movieNew;
     private static Scene allMovies;
+    private static Scene deleteMovie;
 
 
     @Override
@@ -100,6 +101,11 @@ public class HelloApplication extends Application {
                 FXMLLoader fxmlAllMovies = new FXMLLoader(HelloApplication.class.getResource("all-movies.fxml"));
                 allMovies = new Scene(fxmlAllMovies.load(), 500, 300);
                 globalStage.setScene(allMovies);
+                break;
+            case "deleteMovie":
+                FXMLLoader fxmlDeleteMovie = new FXMLLoader(HelloApplication.class.getResource("movie-delete.fxml"));
+                deleteMovie = new Scene(fxmlDeleteMovie.load(), 500, 300);
+                globalStage.setScene(deleteMovie);
                 break;
         }
     }

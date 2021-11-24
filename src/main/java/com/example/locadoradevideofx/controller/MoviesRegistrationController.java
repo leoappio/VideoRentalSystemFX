@@ -17,4 +17,7 @@ public class MoviesRegistrationController {
     public void onAllMoviesClickButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("allMovies");
     }
+    public void onDeleteClickButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("deleteMovie");
+    }
 }

@@ -3,11 +3,9 @@ package com.example.locadoradevideofx.controller;
 import com.example.locadoradevideofx.HelloApplication;
 import com.example.locadoradevideofx.model.Client;
 import com.example.locadoradevideofx.model.Database;
+import com.example.locadoradevideofx.model.Movie;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
@@ -16,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class DeleteClientController {
+
 
     @FXML
     private Label successMessage;
