@@ -22,5 +22,8 @@ public class ClientRegistrationController {
     public void onDeleteClientButtonClick(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("deleteClient");
     }
+    public void onEditClientButtonClick(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("editClient");
+    }
 
 }

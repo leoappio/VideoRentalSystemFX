@@ -30,4 +30,5 @@ public class HelloController {
     protected void onReportsButtonClick() throws IOException {
         HelloApplication.changeScreen("reportsMenu");
     }
+
 }

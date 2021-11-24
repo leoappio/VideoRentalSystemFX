@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
     private static Scene clientNew;
     private static Scene allClients;
     private static Scene deleteClient;
+    private static Scene editClient;
 
 
     @Override
@@ -77,11 +78,15 @@ public class HelloApplication extends Application {
                 allClients = new Scene(fxmlAllClients.load(), 500, 300);
                 globalStage.setScene(allClients);
                 break;
-
             case "deleteClient":
                 FXMLLoader fxmlDeleteClient = new FXMLLoader(HelloApplication.class.getResource("client-delete.fxml"));
                 deleteClient = new Scene(fxmlDeleteClient.load(), 500, 300);
                 globalStage.setScene(deleteClient);
+                break;
+            case "editClient":
+                FXMLLoader fxmlEditClient = new FXMLLoader(HelloApplication.class.getResource("client-edit.fxml"));
+                editClient = new Scene(fxmlEditClient.load(), 500, 300);
+                globalStage.setScene(editClient);
                 break;
         }
     }
