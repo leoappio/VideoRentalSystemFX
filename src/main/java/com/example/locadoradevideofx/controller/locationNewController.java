@@ -1,8 +1,7 @@
 package com.example.locadoradevideofx.controller;
 
 import com.example.locadoradevideofx.HelloApplication;
-import com.example.locadoradevideofx.model.Database;
-import com.example.locadoradevideofx.model.Movie;
+import com.example.locadoradevideofx.model.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -13,6 +12,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class locationNewController {
@@ -21,46 +21,22 @@ public class locationNewController {
     @FXML
     private ChoiceBox moviesList;
     @FXML
-    private TextField titleField;
-    @FXML
-    private ChoiceBox listType;
-    @FXML
-    private TextField quantityField;
+    private ChoiceBox clientsList;
 
     private List<Movie> movies;
 
+    private List<Client> clients;
+
     public void returnButton(ActionEvent e) throws IOException {
         successMessage.setText("");
-        HelloApplication.changeScreen("movieRegistration");
+        HelloApplication.changeScreen("locationMenu");
     }
 
     public void initialize() throws SQLException {
         attMovieList();
-        listType.getItems().add("Devolução em 24 Horas");
-        listType.getItems().add("Devolução em 48 Horas");
+        attClientList();
 
-        moviesList.setOnAction((event) -> {
-            int selectedIndex = moviesList.getSelectionModel().getSelectedIndex();
-            if(selectedIndex != -1) {
-                titleField.setText(movies.get(selectedIndex).title);
-                if(movies.get(selectedIndex).type == 1){
-                    listType.setValue("Devolução em 24 Horas");
-                }else{
-                    listType.setValue("Devolução em 48 Horas");
-                }
-                quantityField.setText(Integer.toString(movies.get(selectedIndex).quantity));
-            }
-        });
 
-        quantityField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    quantityField.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
     }
 
     private void attMovieList() throws SQLException {
@@ -72,22 +48,37 @@ public class locationNewController {
         }
     }
 
-    public void onEditClickButton(ActionEvent e) throws SQLException {
-        if(titleField.getText()!="" && Integer.parseInt(quantityField.getText()) > 0 && listType.getSelectionModel().getSelectedIndex() != -1){
-            int selectedIndex = moviesList.getSelectionModel().getSelectedIndex();
-            Movie movieToEdit = movies.get(selectedIndex);
-            movieToEdit.setTitle(titleField.getText());
-            movieToEdit.setType(listType.getSelectionModel().getSelectedIndex() + 1);
-            movieToEdit.setQuantity(Integer.parseInt(quantityField.getText()));
-            Database.updateMovie(movieToEdit);
-            successMessage.setText("Filme editado com sucesso!");
-            attMovieList();
-            titleField.setText("");
-            listType.setValue("");
-            quantityField.setText("");
-        }else{
-            successMessage.setText("Os dados não podem estar vazios");
+    private void attClientList() throws SQLException {
+        VideoRentalShop store = new VideoRentalShop();
+        clients = store.getClients();
+        clientsList.getItems().clear();
+        for(Client client : clients){
+            clientsList.getItems().add(client.id+" - "+client.name);
         }
+    }
+
+    public void onLocationClickButton(ActionEvent e) throws SQLException {
+        int selectedIndexClient = clientsList.getSelectionModel().getSelectedIndex();
+        int selectedIndexMovie = moviesList.getSelectionModel().getSelectedIndex();
+        if (selectedIndexClient != -1 && selectedIndexMovie != -1){
+            Client client = clients.get(selectedIndexClient);
+            Movie movie = movies.get(selectedIndexMovie);
+            Location verifyLocation = Database.getLocationByClientAndMovieId(client.id, movie.id);
+            if (verifyLocation == null || verifyLocation.returned.equals("yes")) {
+                Location location = new Location(client.id, movie.id, 0, "no");
+                Database.insertLocation(location);
+                movie.decreaseQuantity();
+                Database.updateMovie(movie);
+                successMessage.setText("Locação realizada com sucesso");
+                clientsList.setValue("");
+                moviesList.setValue("");
+            } else {
+                successMessage.setText("esse cliente já alugou este filme e não devolveu!");
+            }
+
+        }
+
+
 
 
     }

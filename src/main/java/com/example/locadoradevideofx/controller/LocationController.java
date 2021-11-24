@@ -9,5 +9,8 @@ public class LocationController {
     public void returnButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("main");
     }
+    public void locationButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("location");
+    }
 }
 
