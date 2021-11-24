@@ -19,7 +19,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="522.0">
                <children>
-                  <Button layoutX="25.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Balanço do acervo" />
+                  <Button layoutX="25.0" layoutY="91.0" mnemonicParsing="false" onAction="#onColBalanceButtonClick" prefHeight="34.0" prefWidth="201.0" text="Balanço do acervo" />
                   <Button layoutX="260.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Balanço de movimentações" />
                </children></AnchorPane>
         </items>

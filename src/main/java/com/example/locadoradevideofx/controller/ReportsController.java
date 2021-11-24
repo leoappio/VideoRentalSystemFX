@@ -10,4 +10,7 @@ public class ReportsController {
     public void returnButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("main");
     }
+    public void onColBalanceButtonClick(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("collectionBalance");
+    }
 }
