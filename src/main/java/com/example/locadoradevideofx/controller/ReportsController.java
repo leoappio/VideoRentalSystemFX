@@ -13,4 +13,7 @@ public class ReportsController {
     public void onColBalanceButtonClick(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("collectionBalance");
     }
+    public void onMovBalanceButtonClick(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("movementsBalance");
+    }
 }

@@ -25,6 +25,7 @@ public class HelloApplication extends Application {
     private static Scene deleteMovie;
     private static Scene editMovie;
     private static Scene collectionBalance;
+    private static Scene movementsBalance;
 
 
     @Override
@@ -118,6 +119,11 @@ public class HelloApplication extends Application {
                 FXMLLoader fxmlColBalance = new FXMLLoader(HelloApplication.class.getResource("collection-balance.fxml"));
                 collectionBalance = new Scene(fxmlColBalance.load(), 500, 300);
                 globalStage.setScene(collectionBalance);
+                break;
+            case "movementsBalance":
+                FXMLLoader fxmlMovBalance = new FXMLLoader(HelloApplication.class.getResource("movements-balance.fxml"));
+                movementsBalance = new Scene(fxmlMovBalance.load(), 540, 510);
+                globalStage.setScene(movementsBalance);
                 break;
         }
     }

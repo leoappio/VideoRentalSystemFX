@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="489.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locadoradevideofx.controller.MovementsBalanceController">
+   <children>
+      <SplitPane dividerPositions="0.15843270868824533" layoutX="-3.0" layoutY="1.0" orientation="VERTICAL" prefHeight="489.0" prefWidth="529.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="499.0">
+               <children>
+                  <Button layoutX="3.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnButton" text="Voltar" />
+                  <Label layoutX="115.0" layoutY="13.0" text="Balanço de Movimentações">
+                     <font>
+                        <Font size="23.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="537.0">
+               <children>
+                  <ListView fx:id="moviesList" layoutX="14.0" layoutY="130.0" prefHeight="108.0" prefWidth="488.0" />
+                  <Label layoutX="21.0" layoutY="110.0" text="10 filmes mais locados" />
+                  <Label fx:id="totalClients" layoutX="15.0" layoutY="14.0" text="Total de clientes: xx" />
+                  <Label fx:id="totalMovies" layoutX="15.0" layoutY="39.0" text="Total de filmes: xx" />
+                  <Label fx:id="totalLocations" layoutX="15.0" layoutY="69.0" text="Total de locações no mês: xx" />
+                  <Label fx:id="movies24" layoutX="201.0" layoutY="14.0" text="Filmes 24H: xx" />
+                  <Label fx:id="movies48" layoutX="201.0" layoutY="39.0" text="Filmes 48H: xx" />
+                  <Label fx:id="averageLocations" layoutX="201.0" layoutY="69.0" text="Média de locações p/ usuário: xx" />
+                  <Label fx:id="averageLate" layoutX="320.0" layoutY="14.0" text="Média de tempo de atraso: xx dias" />
+                  <Label layoutX="15.0" layoutY="245.0" text="10 melhores clientes" />
+                  <ListView fx:id="clientsList" layoutX="14.0" layoutY="270.0" prefHeight="108.0" prefWidth="488.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
