@@ -40,7 +40,7 @@ public class MovieNewController {
             titleField.setText("");
             quantityField.setText("");
             listType.setValue("");
-            successMessage.setText("Cliente cadastrado com sucesso!");
+            successMessage.setText("Filme cadastrado com sucesso!");
         }else{
             successMessage.setText("Preencha todos os campos!");
         }

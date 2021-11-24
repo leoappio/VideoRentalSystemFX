@@ -20,7 +20,8 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="522.0">
                <children>
                   <Label fx:id="successMessage" layoutX="160.0" layoutY="139.0" />
-                  <ListView fx:id="clientsList" layoutX="14.0" layoutY="14.0" prefHeight="229.0" prefWidth="476.0" />
+                  <ListView fx:id="clientsList" layoutX="14.0" layoutY="24.0" prefHeight="219.0" prefWidth="476.0" />
+                  <Label layoutX="21.0" layoutY="5.0" text="Nome  - Telefone" />
                </children></AnchorPane>
         </items>
       </SplitPane>

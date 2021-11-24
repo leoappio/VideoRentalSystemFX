@@ -14,4 +14,7 @@ public class MoviesRegistrationController {
     public void onCreateClickButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("movieNew");
     }
+    public void onAllMoviesClickButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("allMovies");
+    }
 }

@@ -21,7 +21,7 @@
                <children>
                   <Button layoutX="27.0" layoutY="35.0" mnemonicParsing="false" onAction="#onCreateClickButton" prefHeight="34.0" prefWidth="201.0" text="Inclusão" />
                   <Button layoutX="261.0" layoutY="35.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Alteração" />
-                  <Button layoutX="27.0" layoutY="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Consulta" />
+                  <Button layoutX="27.0" layoutY="103.0" mnemonicParsing="false" onAction="#onAllMoviesClickButton" prefHeight="34.0" prefWidth="201.0" text="Consulta" />
                   <Button layoutX="261.0" layoutY="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="201.0" text="Exclusão" />
                </children></AnchorPane>
         </items>
