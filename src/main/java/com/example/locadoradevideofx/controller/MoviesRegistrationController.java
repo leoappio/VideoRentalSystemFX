@@ -20,4 +20,7 @@ public class MoviesRegistrationController {
     public void onDeleteClickButton(ActionEvent e) throws IOException {
         HelloApplication.changeScreen("deleteMovie");
     }
+    public void onEditClickButton(ActionEvent e) throws IOException {
+        HelloApplication.changeScreen("editMovie");
+    }
 }

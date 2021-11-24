@@ -28,7 +28,6 @@ public class DeleteMovieController {
 
     public void initialize() throws SQLException {
         attMovieList();
-
     }
 
     private void attMovieList() throws SQLException {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="327.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locadoradevideofx.controller.EditMovieController">
+   <children>
+      <SplitPane dividerPositions="0.15843270868824533" layoutX="-3.0" layoutY="1.0" orientation="VERTICAL" prefHeight="303.0" prefWidth="501.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="152.0" prefWidth="579.0">
+               <children>
+                  <Button layoutX="3.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnButton" text="Voltar" />
+                  <Label layoutX="150.0" layoutY="13.0" text="Editar Filme">
+                     <font>
+                        <Font size="23.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="522.0">
+               <children>
+                  <Button layoutX="357.0" layoutY="212.0" mnemonicParsing="false" onAction="#onEditClickButton" prefHeight="25.0" prefWidth="132.0" text="Salvar Alterações" />
+                  <TextField fx:id="titleField" layoutX="160.0" layoutY="81.0" />
+                  <TextField fx:id="quantityField" layoutX="160.0" layoutY="185.0" />
+                  <Label layoutX="160.0" layoutY="63.0" text="Título" />
+                  <Label layoutX="160.0" layoutY="168.0" text="Quantidade" />
+                  <Label fx:id="successMessage" layoutX="160.0" layoutY="220.0" />
+                  <ChoiceBox fx:id="moviesList" layoutX="159.0" layoutY="22.0" prefWidth="150.0" />
+                  <Label layoutX="159.0" layoutY="6.0" text="Selecione o filme para editar" />
+                  <ChoiceBox fx:id="listType" layoutX="160.0" layoutY="130.0" prefWidth="150.0" />
+                  <Label layoutX="161.0" layoutY="110.0" text="Tipo" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
